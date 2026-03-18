@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 // Static coin packages
 const COIN_PACKAGES = [
@@ -37,13 +37,18 @@ const SYSTEM_PROMPT = `Buat website HTML lengkap dalam 1 file dengan:
 // Job timeout in milliseconds (25 minutes)
 const JOB_TIMEOUT = 25 * 60 * 1000;
 
+// Polling interval (10 seconds)
+const POLL_INTERVAL = 10000;
+
 // Type for processing jobs
 interface ProcessingJob {
   id: string;
   title: string;
   status: 'processing' | 'completed' | 'failed';
-  createdAt: string;
+  createdAt: number; // timestamp in ms
+  startTime: number; // same as createdAt, for clarity
   htmlContent?: string;
+  error?: string;
 }
 
 export default function Home() {
@@ -67,9 +72,111 @@ export default function Home() {
   const [processingJobs, setProcessingJobs] = useState<ProcessingJob[]>([]);
   const [notification, setNotification] = useState<{show: boolean; message: string; type: 'info' | 'success' | 'error'}>({show: false, message: '', type: 'info'});
   
+  // Polling reference
+  const pollingRef = useRef<NodeJS.Timeout | null>(null);
+  
   // Data
   const [websites, setWebsites] = useState<{id: string; title: string; status: string; createdAt: string; htmlContent?: string}[]>([]);
   const [transactions, setTransactions] = useState<{id: string; type: string; coinAmount: number; createdAt: string}[]>([]);
+
+  // Show notification
+  const showNotification = (message: string, type: 'info' | 'success' | 'error') => {
+    setNotification({show: true, message, type});
+    if (type !== 'info') {
+      setTimeout(() => {
+        setNotification({show: false, message: '', type: 'info'});
+      }, 5000);
+    }
+  };
+
+  // Check job status from server
+  const checkJobStatus = useCallback(async (jobId: string) => {
+    try {
+      const response = await fetch(`/api/jobs/${jobId}`);
+      const data = await response.json();
+      
+      if (data.status === 'completed' && data.htmlContent) {
+        // Update job with completed status
+        setProcessingJobs(prev => {
+          const updated = prev.map(j => 
+            j.id === jobId 
+              ? { ...j, status: 'completed' as const, htmlContent: data.htmlContent }
+              : j
+          );
+          localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
+          return updated;
+        });
+        
+        // Add to websites list
+        const job = processingJobs.find(j => j.id === jobId);
+        if (job) {
+          setWebsites(prev => {
+            const newWebsite = {
+              id: jobId,
+              title: job.title,
+              status: 'COMPLETED',
+              createdAt: new Date(job.createdAt).toISOString(),
+              htmlContent: data.htmlContent
+            };
+            const updated = [newWebsite, ...prev.filter(w => w.id !== jobId)];
+            localStorage.setItem('webgenz_websites', JSON.stringify(updated));
+            return updated;
+          });
+          
+          showNotification(`✅ Website "${job.title}" sudah siap!`, 'success');
+        }
+        return true;
+      } else if (data.status === 'failed') {
+        // Update job with failed status
+        setProcessingJobs(prev => {
+          const updated = prev.map(j => 
+            j.id === jobId 
+              ? { ...j, status: 'failed' as const, error: data.error }
+              : j
+          );
+          localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
+          return updated;
+        });
+        showNotification(`❌ Gagal: ${data.error || 'Unknown error'}`, 'error');
+        return true;
+      } else if (data.status === 'not_found') {
+        // Job not found on server - might be expired or not started
+        // Don't mark as failed, just log
+        console.log(`Job ${jobId} not found on server`);
+        return false;
+      }
+      
+      return false;
+    } catch (error) {
+      console.error('Error checking job status:', error);
+      return false;
+    }
+  }, [processingJobs]);
+
+  // Poll active jobs
+  const pollActiveJobs = useCallback(async () => {
+    const activeJobs = processingJobs.filter(j => j.status === 'processing');
+    
+    for (const job of activeJobs) {
+      // Check timeout first
+      const elapsed = Date.now() - job.startTime;
+      if (elapsed > JOB_TIMEOUT) {
+        setProcessingJobs(prev => {
+          const updated = prev.map(j => 
+            j.id === job.id 
+              ? { ...j, status: 'failed' as const, error: 'Timeout (25 menit)' }
+              : j
+          );
+          localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
+          return updated;
+        });
+        showNotification(`❌ Website "${job.title}" melebihi batas waktu (25 menit)`, 'error');
+      } else {
+        // Check server status
+        await checkJobStatus(job.id);
+      }
+    }
+  }, [processingJobs, checkJobStatus]);
 
   // Load data from localStorage on mount
   useEffect(() => {
@@ -84,64 +191,43 @@ export default function Home() {
       const savedTx = localStorage.getItem('webgenz_transactions');
       if (savedTx) setTransactions(JSON.parse(savedTx));
       
+      // Load jobs - DO NOT mark as failed on load!
       const savedJobs = localStorage.getItem('webgenz_processing_jobs');
       if (savedJobs) {
         const jobs: ProcessingJob[] = JSON.parse(savedJobs);
-        // Check for timed out jobs (25 minutes)
-        const now = Date.now();
-        const validJobs = jobs.map(job => {
-          if (job.status === 'processing') {
-            const jobTime = new Date(job.createdAt).getTime();
-            if (now - jobTime > JOB_TIMEOUT) {
-              return { ...job, status: 'failed' as const };
-            }
-          }
-          return job;
-        });
-        setProcessingJobs(validJobs);
-        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(validJobs));
+        // Just load them as-is, polling will handle status updates
+        setProcessingJobs(jobs);
       }
     } catch (e) {
       console.log('No saved data');
     }
   }, []);
 
-  // Check for job timeouts periodically
+  // Start polling when there are active jobs
   useEffect(() => {
-    const interval = setInterval(() => {
-      const now = Date.now();
-      let hasChanges = false;
-      
-      const updatedJobs = processingJobs.map(job => {
-        if (job.status === 'processing') {
-          const jobTime = new Date(job.createdAt).getTime();
-          if (now - jobTime > JOB_TIMEOUT) {
-            hasChanges = true;
-            return { ...job, status: 'failed' as const };
-          }
-        }
-        return job;
-      });
-      
-      if (hasChanges) {
-        setProcessingJobs(updatedJobs);
-        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updatedJobs));
-        showNotification('❌ Proses website melebihi batas waktu (25 menit)', 'error');
-      }
-    }, 60000); // Check every minute
-
-    return () => clearInterval(interval);
-  }, [processingJobs]);
-
-  // Show notification
-  const showNotification = (message: string, type: 'info' | 'success' | 'error') => {
-    setNotification({show: true, message, type});
-    if (type !== 'info') {
-      setTimeout(() => {
-        setNotification({show: false, message: '', type: 'info'});
-      }, 5000);
+    const hasActiveJobs = processingJobs.some(j => j.status === 'processing');
+    
+    if (hasActiveJobs && !pollingRef.current) {
+      // Start polling
+      console.log('Starting job polling...');
+      pollingRef.current = setInterval(pollActiveJobs, POLL_INTERVAL);
+      // Also poll immediately
+      pollActiveJobs();
+    } else if (!hasActiveJobs && pollingRef.current) {
+      // Stop polling
+      console.log('Stopping job polling...');
+      clearInterval(pollingRef.current);
+      pollingRef.current = null;
     }
-  };
+    
+    // Cleanup on unmount - but DON'T mark jobs as failed!
+    return () => {
+      if (pollingRef.current) {
+        clearInterval(pollingRef.current);
+        pollingRef.current = null;
+      }
+    };
+  }, [processingJobs.some(j => j.status === 'processing'), pollActiveJobs]);
 
   const saveUser = (userData: typeof user) => {
     setUser(userData);
@@ -297,14 +383,19 @@ export default function Home() {
     // Show processing notification
     showNotification(`⏳ Membuat website "${websiteTitle}"... (5-20 menit)`, 'info');
     
-    // Create job
+    // Create job with startTime
     const jobId = `job_${Date.now()}`;
+    const now = Date.now();
     const newJob: ProcessingJob = {
       id: jobId,
       title: websiteTitle,
       status: 'processing',
-      createdAt: new Date().toISOString()
+      createdAt: now,
+      startTime: now
     };
+    
+    // Store title before clearing
+    const title = websiteTitle;
     
     // Add to processing jobs
     const updatedJobs = [newJob, ...processingJobs];
@@ -332,73 +423,53 @@ export default function Home() {
     }, ...transactions]);
     
     // Combine prompt
-    const finalPrompt = `Judul Website: ${websiteTitle}\n\n${SYSTEM_PROMPT}`;
+    const finalPrompt = `Judul Website: ${title}\n\n${SYSTEM_PROMPT}`;
 
-    // Store title before clearing
-    const title = websiteTitle;
-    
     // Clear form
     setWebsiteTitle('');
 
-    // Process in background
-    try {
-      const response = await fetch('/api/websites/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: finalPrompt, jobId })
-      });
-
-      // Get text first, then parse
-      const text = await response.text();
-      let data;
-      
-      try {
-        data = JSON.parse(text);
-      } catch {
-        console.error('Response bukan JSON:', text.substring(0, 500));
-        // Mark as failed
-        const failedJobs = updatedJobs.map(j => 
-          j.id === jobId ? {...j, status: 'failed'} : j
-        );
-        setProcessingJobs(failedJobs);
-        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(failedJobs));
-        showNotification('❌ Server error, coba lagi nanti', 'error');
-        return;
-      }
-
-      if (data.htmlContent) {
-        // Job completed
-        const completedJobs = updatedJobs.map(j => 
-          j.id === jobId ? {...j, status: 'completed', htmlContent: data.htmlContent} : j
-        );
-        setProcessingJobs(completedJobs);
-        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(completedJobs));
-        
-        // Add to websites
-        const newWebsite = {
-          id: jobId,
-          title: title,
-          status: 'COMPLETED',
-          createdAt: newJob.createdAt,
-          htmlContent: data.htmlContent
-        };
-        const finalWebsites = [newWebsite, ...websites];
-        setWebsites(finalWebsites);
-        localStorage.setItem('webgenz_websites', JSON.stringify(finalWebsites));
-        
-        showNotification(`✅ Website "${title}" sudah siap!`, 'success');
+    // Send to server (async, don't wait)
+    fetch('/api/websites/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        prompt: finalPrompt, 
+        jobId,
+        title,
+        userId: user.id
+      })
+    }).then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        console.log('Job started:', jobId);
       } else {
-        throw new Error(data.error || 'Gagal generate website');
+        console.error('Failed to start job:', data.error);
+        // Mark as failed only if server explicitly failed to start
+        setProcessingJobs(prev => {
+          const updated = prev.map(j => 
+            j.id === jobId 
+              ? { ...j, status: 'failed' as const, error: data.error || 'Failed to start' }
+              : j
+          );
+          localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
+          return updated;
+        });
+        showNotification(`❌ Gagal memulai: ${data.error}`, 'error');
       }
-    } catch (error: any) {
-      console.error('Generate error:', error);
-      const failedJobs = updatedJobs.map(j => 
-        j.id === jobId ? {...j, status: 'failed'} : j
-      );
-      setProcessingJobs(failedJobs);
-      localStorage.setItem('webgenz_processing_jobs', JSON.stringify(failedJobs));
-      showNotification(`❌ Error: ${error.message}`, 'error');
-    }
+    }).catch(error => {
+      console.error('Fetch error:', error);
+      // Mark as failed only on network error
+      setProcessingJobs(prev => {
+        const updated = prev.map(j => 
+          j.id === jobId 
+            ? { ...j, status: 'failed' as const, error: 'Network error' }
+            : j
+        );
+        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
+        return updated;
+      });
+      showNotification('❌ Gagal menghubungi server', 'error');
+    });
   };
 
   const handleDownload = (site: typeof websites[0]) => {
@@ -433,7 +504,10 @@ export default function Home() {
     return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(price);
   };
 
-  const formatDate = (dateStr: string) => {
+  const formatDate = (dateStr: string | number) => {
+    if (typeof dateStr === 'number') {
+      return new Date(dateStr).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
+    }
     return new Date(dateStr).toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' });
   };
 
@@ -452,7 +526,7 @@ export default function Home() {
       id: j.id,
       title: j.title,
       status: j.status === 'processing' ? 'PROCESSING' : j.status === 'failed' ? 'FAILED' : 'COMPLETED',
-      createdAt: j.createdAt,
+      createdAt: new Date(j.createdAt).toISOString(),
       htmlContent: j.htmlContent
     })),
     ...websites.filter(w => !processingJobs.find(j => j.id === w.id))
@@ -866,7 +940,7 @@ export default function Home() {
             <div style={{ fontSize: '24px' }}>⏳</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: '600' }}>Sedang Memproses Website</div>
-              <div style={{ fontSize: '14px', color: '#666' }}>Estimasi 5-20 menit. Kamu bisa menggunakan aplikasi seperti biasa.</div>
+              <div style={{ fontSize: '14px', color: '#666' }}>Estimasi 5-20 menit. Kamu bisa refresh halaman, proses akan lanjut.</div>
             </div>
           </div>
         )}

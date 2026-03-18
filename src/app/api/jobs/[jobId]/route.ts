@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-
-// Job storage - in production use database
-// For now, we'll use in-memory storage with localStorage sync via the client
-
-// This API is mainly for checking job status from the frontend
-// Since we're using localStorage on the client side, this serves as a status endpoint
+import { getJob } from '../store';
 
 export async function GET(
   request: NextRequest,
@@ -13,19 +8,29 @@ export async function GET(
   const { jobId } = params;
   
   try {
-    // Since we're using localStorage on client side,
-    // this endpoint just returns a processing status
-    // The actual status is managed client-side
+    const job = getJob(jobId);
     
-    // In a real implementation, you would check a database here
-    // For now, we return processing status
-    // The client will handle the actual status from localStorage
+    if (!job) {
+      return NextResponse.json({
+        status: 'not_found',
+        error: 'Job tidak ditemukan. Mungkin sudah expired atau belum dibuat.',
+        jobId
+      }, { status: 404 });
+    }
+    
+    // Calculate elapsed time
+    const elapsed = Date.now() - job.createdAt;
+    const elapsedMinutes = Math.floor(elapsed / 60000);
     
     return NextResponse.json({
-      status: 'processing',
-      message: 'Job is being processed. Check client-side storage for actual status.',
-      jobId,
-      timestamp: new Date().toISOString()
+      id: job.id,
+      title: job.title,
+      status: job.status,
+      createdAt: job.createdAt,
+      elapsedMs: elapsed,
+      elapsedMinutes,
+      htmlContent: job.htmlContent,
+      error: job.error
     });
     
   } catch (error: any) {
