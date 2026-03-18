@@ -1,0 +1,851 @@
+==========================================
+[2026-03-18 02:02:02] Starting: bun install
+==========================================
+[BUN] Installing dependencies...
+[0.33ms] ".env"
+bun install v1.3.10 (30e609e0)
+
++ @tailwindcss/postcss@4.1.18
++ @types/react@19.2.8
++ @types/react-dom@19.2.3
++ bun-types@1.3.6
++ eslint@9.39.2
++ eslint-config-next@16.1.3
++ tailwindcss@4.1.18
++ tw-animate-css@1.4.0
++ typescript@5.9.3
++ @dnd-kit/core@6.3.1
++ @dnd-kit/sortable@10.0.0
++ @dnd-kit/utilities@3.2.2
++ @hookform/resolvers@5.2.2
++ @mdxeditor/editor@3.52.3
++ @prisma/client@6.19.2
++ @radix-ui/react-accordion@1.2.12
++ @radix-ui/react-alert-dialog@1.1.15
++ @radix-ui/react-aspect-ratio@1.1.8
++ @radix-ui/react-avatar@1.1.11
++ @radix-ui/react-checkbox@1.3.3
++ @radix-ui/react-collapsible@1.1.12
++ @radix-ui/react-context-menu@2.2.16
++ @radix-ui/react-dialog@1.1.15
++ @radix-ui/react-dropdown-menu@2.1.16
++ @radix-ui/react-hover-card@1.1.15
++ @radix-ui/react-label@2.1.8
++ @radix-ui/react-menubar@1.1.16
++ @radix-ui/react-navigation-menu@1.2.14
++ @radix-ui/react-popover@1.1.15
++ @radix-ui/react-progress@1.1.8
++ @radix-ui/react-radio-group@1.3.8
++ @radix-ui/react-scroll-area@1.2.10
++ @radix-ui/react-select@2.2.6
++ @radix-ui/react-separator@1.1.8
++ @radix-ui/react-slider@1.3.6
++ @radix-ui/react-slot@1.2.4
++ @radix-ui/react-switch@1.2.6
++ @radix-ui/react-tabs@1.1.13
++ @radix-ui/react-toast@1.2.15
++ @radix-ui/react-toggle@1.1.10
++ @radix-ui/react-toggle-group@1.1.11
++ @radix-ui/react-tooltip@1.2.8
++ @reactuses/core@6.1.9
++ @tanstack/react-query@5.90.19
++ @tanstack/react-table@8.21.3
++ class-variance-authority@0.7.1
++ clsx@2.1.1
++ cmdk@1.1.1
++ date-fns@4.1.0
++ embla-carousel-react@8.6.0
++ framer-motion@12.26.2
++ input-otp@1.4.2
++ lucide-react@0.525.0
++ next@16.1.3
++ next-auth@4.24.13
++ next-intl@4.7.0
++ next-themes@0.4.6
++ prisma@6.19.2
++ react@19.2.3
++ react-day-picker@9.13.0
++ react-dom@19.2.3
++ react-hook-form@7.71.1
++ react-markdown@10.1.0
++ react-resizable-panels@3.0.6
++ react-syntax-highlighter@15.6.6
++ recharts@2.15.4
++ sharp@0.34.5
++ sonner@2.0.7
++ tailwind-merge@3.4.0
++ tailwindcss-animate@1.0.7
++ uuid@11.1.0
++ vaul@1.1.2
++ z-ai-web-dev-sdk@0.0.17
++ zod@4.3.5
++ zustand@5.0.10
+
+827 packages installed [11.67s]
+==========================================
+[2026-03-18 02:02:14] Completed: bun install
+[LOG] Step: bun install | Duration: 12s
+==========================================
+
+==========================================
+[2026-03-18 02:02:14] Starting: bun run db:push
+==========================================
+[BUN] Setting up database...
+$ prisma db push
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": SQLite database "custom.db" at "file:/home/z/my-project/db/custom.db"
+
+SQLite database custom.db created at file:/home/z/my-project/db/custom.db
+
+🚀  Your database is now in sync with your Prisma schema. Done in 20ms
+
+Running generate... (Use --skip-generate to skip the generators)
+[2K[1A[2K[GRunning generate... - Prisma Client
+[2K[1A[2K[G✔ Generated Prisma Client (v6.19.2) to ./node_modules/@prisma/client in 72ms
+┌─────────────────────────────────────────────────────────┐
+│  Update available 6.19.2 -> 7.5.0                       │
+│                                                         │
+│  This is a major update - please follow the guide at    │
+│  https://pris.ly/d/major-version-upgrade                │
+│                                                         │
+│  Run the following to update                            │
+│    npm i --save-dev prisma@latest                       │
+│    npm i @prisma/client@latest                          │
+└─────────────────────────────────────────────────────────┘
+
+==========================================
+[2026-03-18 02:02:15] Completed: bun run db:push
+[LOG] Step: bun run db:push | Duration: 1s
+==========================================
+
+==========================================
+[2026-03-18 02:02:15] Starting: Starting Next.js dev server
+==========================================
+[BUN] Starting development server...
+==========================================
+$ next dev -p 3000 2>&1 | tee dev.log
+[2026-03-18 02:02:15] Completed: Starting Next.js dev server
+[LOG] Step: Starting Next.js dev server | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-18 02:02:15] Starting: Waiting for Next.js dev server
+==========================================
+Waiting for Next.js dev server to be ready on localhost:3000...
+Attempt 1/60: Next.js dev server not ready yet, waiting...
+▲ Next.js 16.1.3 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://21.0.14.196:3000
+- Environments: .env
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+  We detected TypeScript in your project and reconfigured your tsconfig.json file for you.
+  The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+  	- include was updated to add '.next/dev/types/**/*.ts'
+
+  The following mandatory changes were made to your tsconfig.json:
+
+  	- jsx was set to react-jsx (next.js uses the React automatic runtime)
+
+✓ Ready in 930ms
+ GET / 200 in 3.0s (compile: 2.8s, render: 182ms)
+Next.js dev server is ready!
+==========================================
+[2026-03-18 02:02:19] Completed: Waiting for Next.js dev server
+[LOG] Step: Waiting for Next.js dev server | Duration: 4s
+==========================================
+
+==========================================
+[2026-03-18 02:02:19] Starting: Health check
+==========================================
+[BUN] Performing health check...
+ GET / 200 in 28ms (compile: 3ms, render: 25ms)
+[BUN] Health check passed
+==========================================
+[2026-03-18 02:02:20] Completed: Health check
+[LOG] Step: Health check | Duration: 0s
+==========================================
+
+==========================================
+[2026-03-18 02:02:20] Starting: Starting mini-services
+==========================================
+Found mini-services directory, scanning for sub-services...
+Mini-services startup completed. Started 0 service(s).
+==========================================
+[2026-03-18 02:02:20] Completed: Starting mini-services
+[LOG] Step: Starting mini-services | Duration: 0s
+==========================================
+
+Next.js dev server is running in background (PID: 336).
+Use 'kill 336' to stop it.
+✓ Compiled in 293ms
+ GET / 200 in 201ms (compile: 108ms, render: 93ms)
+⚠ Cross origin request detected from preview-chat-77f7860d-e03d-491f-8dff-846cca562797.space.z.ai to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ GET /api/user 401 in 347ms (compile: 326ms, render: 21ms)
+ GET /api/coins/purchase 200 in 344ms (compile: 339ms, render: 5ms)
+ GET / 200 in 44ms (compile: 4ms, render: 41ms)
+ GET /api/user 401 in 8ms (compile: 2ms, render: 5ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1536µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 121ms (compile: 105ms, render: 16ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 9ms (compile: 3ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 10ms (compile: 3ms, render: 7ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 9ms (compile: 4ms, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 8ms (compile: 2ms, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 7ms (compile: 1916µs, render: 5ms)
+ POST /api/auth/login 400 in 8ms (compile: 1910µs, render: 6ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 400 in 8ms (compile: 1783µs, render: 6ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`User` (`id`, `email`, `name`, `password`, `phone`, `coins`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/auth/register 200 in 116ms (compile: 104ms, render: 12ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 112ms (compile: 101ms, render: 11ms)
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 134ms (compile: 111ms, render: 22ms)
+ POST /api/auth/logout 200 in 105ms (compile: 100ms, render: 5ms)
+ GET / 200 in 60ms (compile: 4ms, render: 56ms)
+ GET / 200 in 30ms (compile: 2ms, render: 28ms)
+ GET / 200 in 33ms (compile: 1832µs, render: 31ms)
+ GET /api/user 401 in 7ms (compile: 1886µs, render: 5ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1929µs, render: 3ms)
+✓ Compiled in 183ms
+ GET / 200 in 159ms (compile: 48ms, render: 111ms)
+ GET /api/user 401 in 8ms (compile: 2ms, render: 5ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1612µs, render: 3ms)
+ GET / 200 in 36ms (compile: 3ms, render: 33ms)
+ GET /api/coins/purchase 200 in 8ms (compile: 5ms, render: 3ms)
+ GET /api/user 401 in 10ms (compile: 2ms, render: 8ms)
+✓ Compiled in 158ms
+ GET / 200 in 150ms (compile: 44ms, render: 106ms)
+ GET /api/coins/purchase 200 in 39ms (compile: 31ms, render: 8ms)
+ GET /api/user 401 in 72ms (compile: 67ms, render: 6ms)
+ GET / 200 in 49ms (compile: 6ms, render: 43ms)
+ GET /api/coins/purchase 200 in 6ms (compile: 3ms, render: 4ms)
+ GET /api/user 401 in 11ms (compile: 6ms, render: 4ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/register 400 in 63ms (compile: 50ms, render: 14ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`email` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/auth/login 200 in 38ms (compile: 28ms, render: 10ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 32ms (compile: 23ms, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 39ms (compile: 26ms, render: 12ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 125ms (compile: 111ms, render: 14ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 104ms (compile: 84ms, render: 19ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 2ms, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 11ms (compile: 2ms, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 27ms (compile: 2ms, render: 25ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` - ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query INSERT INTO `main`.`Website` (`id`, `userId`, `title`, `prompt`, `status`, `coinCost`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 11ms (compile: 2ms, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 13ms (compile: 1774µs, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 2ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 1749µs, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 10ms (compile: 2ms, render: 8ms)
+prisma:query SELECT 1
+prisma:query UPDATE `main`.`Website` SET `status` = ?, `htmlContent` = ?, `updatedAt` = ? WHERE (`main`.`Website`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/websites/generate 200 in 2.3min (compile: 3ms, render: 2.3min)
+ GET / 200 in 32ms (compile: 3ms, render: 28ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 2ms, render: 7ms)
+ GET /api/coins/purchase 200 in 6ms (compile: 2ms, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 12ms (compile: 1661µs, render: 10ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 10ms (compile: 2ms, render: 8ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/websites/cmmvjejzp0004pz9xx2wxin6m 200 in 781ms (compile: 764ms, render: 18ms)
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvjejzp0004pz9xx2wxin6m 200 in 50ms (compile: 32ms, render: 18ms)
+ GET / 200 in 37ms (compile: 3ms, render: 34ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 2ms, render: 7ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1409µs, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 1787µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1258µs, render: 6ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvjejzp0004pz9xx2wxin6m 200 in 55ms (compile: 41ms, render: 14ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvjejzp0004pz9xx2wxin6m 200 in 48ms (compile: 35ms, render: 13ms)
+ GET / 200 in 29ms (compile: 4ms, render: 25ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1864µs, render: 5ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1285µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 13ms (compile: 2ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 13ms (compile: 1727µs, render: 11ms)
+ GET / 200 in 25ms (compile: 1948µs, render: 23ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 8ms (compile: 2ms, render: 6ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1327µs, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 1645µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1179µs, render: 6ms)
+✓ Compiled in 172ms
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 12ms (compile: 2ms, render: 9ms)
+ GET /api/coins/purchase 200 in 7ms (compile: 1911µs, render: 5ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 1482µs, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 9ms (compile: 3ms, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 1730µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1347µs, render: 6ms)
+✓ Compiled in 148ms
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 1859µs, render: 7ms)
+ GET /api/coins/purchase 200 in 7ms (compile: 4ms, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 23ms (compile: 3ms, render: 20ms)
+ GET /api/transactions 200 in 24ms (compile: 4ms, render: 20ms)
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 2ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1149µs, render: 6ms)
+✓ Compiled in 181ms
+ GET / 200 in 94ms (compile: 59ms, render: 35ms)
+ GET / 200 in 36ms (compile: 3ms, render: 33ms)
+ GET / 200 in 14ms (compile: 1937µs, render: 12ms)
+ GET / 200 in 13ms (compile: 1930µs, render: 11ms)
+ GET / 200 in 20ms (compile: 3ms, render: 17ms)
+ GET / 200 in 19ms (compile: 2ms, render: 17ms)
+ GET / 200 in 13ms (compile: 1794µs, render: 11ms)
+ GET / 200 in 18ms (compile: 2ms, render: 15ms)
+ GET / 200 in 22ms (compile: 3ms, render: 19ms)
+ GET / 200 in 14ms (compile: 1944µs, render: 12ms)
+ GET / 200 in 15ms (compile: 1873µs, render: 13ms)
+ GET / 200 in 15ms (compile: 1640µs, render: 14ms)
+ GET / 200 in 14ms (compile: 1984µs, render: 12ms)
+ GET / 200 in 14ms (compile: 1703µs, render: 12ms)
+ GET / 200 in 19ms (compile: 1794µs, render: 17ms)
+ GET / 200 in 13ms (compile: 1795µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1835µs, render: 11ms)
+ GET / 200 in 12ms (compile: 1982µs, render: 10ms)
+ GET / 200 in 16ms (compile: 1766µs, render: 14ms)
+ GET / 200 in 17ms (compile: 2ms, render: 15ms)
+ GET / 200 in 21ms (compile: 3ms, render: 19ms)
+ GET / 200 in 12ms (compile: 1701µs, render: 10ms)
+ GET / 200 in 12ms (compile: 1755µs, render: 11ms)
+ GET / 200 in 15ms (compile: 1862µs, render: 13ms)
+ GET / 200 in 21ms (compile: 3ms, render: 18ms)
+ GET / 200 in 19ms (compile: 3ms, render: 16ms)
+ GET / 200 in 25ms (compile: 3ms, render: 23ms)
+ GET / 200 in 14ms (compile: 1925µs, render: 12ms)
+ GET / 200 in 17ms (compile: 1980µs, render: 15ms)
+ GET / 200 in 13ms (compile: 1866µs, render: 11ms)
+ GET / 200 in 13ms (compile: 1916µs, render: 11ms)
+ GET / 200 in 13ms (compile: 2ms, render: 11ms)
+ GET / 200 in 115ms (compile: 6ms, render: 108ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 46ms (compile: 34ms, render: 12ms)
+ GET /api/coins/purchase 200 in 28ms (compile: 23ms, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 33ms (compile: 23ms, render: 10ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 51ms (compile: 27ms, render: 24ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvjejzp0004pz9xx2wxin6m 200 in 1022ms (compile: 955ms, generate-params: 480ms, render: 67ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvjejzp0004pz9xx2wxin6m 200 in 121ms (compile: 44ms, generate-params: 41ms, render: 77ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query DELETE FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?)
+ DELETE /api/websites/cmmvjejzp0004pz9xx2wxin6m 200 in 114ms (compile: 65ms, render: 49ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 9ms (compile: 2ms, render: 7ms)
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvjejzp0004pz9xx2wxin6m 404 in 114ms (compile: 39ms, generate-params: 35ms, render: 76ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` - ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query INSERT INTO `main`.`Website` (`id`, `userId`, `title`, `prompt`, `status`, `coinCost`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ GET / 200 in 42ms (compile: 3ms, render: 39ms)
+ POST /api/websites/generate 200 in 14.5s (compile: 3ms, render: 14.5s)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 11ms (compile: 4ms, render: 7ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1373µs, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 13ms (compile: 3ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 12ms (compile: 3ms, render: 10ms)
+ GET / 200 in 35ms (compile: 2ms, render: 33ms)
+ GET / 200 in 33ms (compile: 1920µs, render: 31ms)
+ GET /api/coins/purchase 200 in 6ms (compile: 1784µs, render: 4ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 6ms (compile: 1375µs, render: 5ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 7ms (compile: 1630µs, render: 5ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 6ms (compile: 1174µs, render: 5ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 41ms (compile: 25ms, render: 16ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 35ms (compile: 21ms, render: 14ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 11ms (compile: 2ms, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 15ms (compile: 2ms, render: 12ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 3ms, render: 8ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 11ms (compile: 1735µs, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 12ms (compile: 2ms, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 2ms, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 2ms, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1755µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 13ms (compile: 2ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 13ms (compile: 2ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 1474µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 9ms (compile: 1685µs, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 2ms, render: 7ms)
+prisma:query UPDATE `main`.`Website` SET `status` = ?, `htmlContent` = ?, `updatedAt` = ? WHERE (`main`.`Website`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ GET / 200 in 43ms (compile: 3ms, render: 40ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 8ms (compile: 1808µs, render: 7ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1654µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT 1
+ GET /api/transactions 200 in 11ms (compile: 1793µs, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 13ms (compile: 6ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvkeef90008pz9xod0rws49 200 in 60ms (compile: 46ms, render: 14ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvkeef90008pz9xod0rws49 200 in 112ms (compile: 41ms, render: 71ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` - ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query INSERT INTO `main`.`Website` (`id`, `userId`, `title`, `prompt`, `status`, `coinCost`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ GET / 200 in 27ms (compile: 2ms, render: 24ms)
+ POST /api/websites/generate 200 in 94s (compile: 2ms, render: 94s)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1698µs, render: 6ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1335µs, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 1599µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1258µs, render: 6ms)
+ GET / 200 in 38ms (compile: 2ms, render: 36ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1571µs, render: 5ms)
+ GET /api/coins/purchase 200 in 3ms (compile: 1286µs, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 12ms (compile: 4ms, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 7ms (compile: 1194µs, render: 6ms)
+ GET / 200 in 27ms (compile: 1915µs, render: 25ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 2ms, render: 3ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 11ms (compile: 1490µs, render: 10ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT 1
+ GET /api/transactions 200 in 10ms (compile: 1484µs, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 9ms (compile: 1534µs, render: 7ms)
+ GET / 200 in 30ms (compile: 1955µs, render: 28ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 6ms (compile: 1703µs, render: 4ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1295µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 3ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 6ms (compile: 1180µs, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvkeef90008pz9xod0rws49 200 in 58ms (compile: 40ms, render: 18ms)
+prisma:query UPDATE `main`.`Website` SET `status` = ?, `htmlContent` = ?, `updatedAt` = ? WHERE (`main`.`Website`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `title` AS `title`, `description` AS `description`, `prompt` AS `prompt`, `status` AS `status`, `coinCost` AS `coinCost`, `htmlContent` AS `htmlContent`, `cssContent` AS `cssContent`, `jsContent` AS `jsContent`, `previewUrl` AS `previewUrl`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ GET / 200 in 36ms (compile: 3ms, render: 33ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 11ms (compile: 3ms, render: 8ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1665µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 13ms (compile: 2ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 11ms (compile: 3ms, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/websites/cmmvkloyz000gpz9xdl7gp798 200 in 71ms (compile: 48ms, render: 23ms)
+prisma:query SELECT 1
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvkloyz000gpz9xdl7gp798 200 in 98ms (compile: 42ms, generate-params: 37ms, render: 56ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvkloyz000gpz9xdl7gp798 200 in 94ms (compile: 42ms, generate-params: 39ms, render: 52ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+ GET / 200 in 30ms (compile: 6ms, render: 25ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1843µs, render: 3ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1275µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 12ms (compile: 4ms, render: 8ms)
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 14ms (compile: 1920µs, render: 12ms)
+✓ Compiled in 135ms
+ GET / 200 in 84ms (compile: 56ms, render: 29ms)
+✓ Compiled in 130ms
+ GET / 200 in 71ms (compile: 46ms, render: 25ms)
+ GET / 200 in 20ms (compile: 2ms, render: 17ms)
+ GET / 200 in 89ms (compile: 1958µs, render: 87ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 2ms, render: 7ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 1455µs, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 2ms, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1143µs, render: 5ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE (`main`.`Website`.`id` = ? AND `main`.`Website`.`status` = ?) LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`id` = ? LIMIT ? OFFSET ?
+ GET /site/cmmvkloyz000gpz9xdl7gp798 200 in 288ms (compile: 94ms, generate-params: 37ms, render: 194ms)
+prisma:query SELECT `main`.`Website`.`id` FROM `main`.`Website` WHERE `main`.`Website`.`status` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query INSERT INTO `main`.`Transaction` (`id`, `userId`, `type`, `coinAmount`, `priceAmount`, `paymentMethod`, `paymentStatus`, `paymentRef`, `expiredAt`, `createdAt`, `updatedAt`) VALUES (?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`Transaction` SET `qrisUrl` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+ POST /api/payment/create 200 in 17ms (compile: 3ms, render: 14ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ?) LIMIT ? OFFSET ?
+ GET /api/payment/status?transactionId=cmmvkyu63000ipz9x3q1muram 200 in 17ms (compile: 7ms, render: 11ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE (`main`.`Transaction`.`id` = ? AND `main`.`Transaction`.`userId` = ? AND `main`.`Transaction`.`paymentStatus` = ?) LIMIT ? OFFSET ?
+prisma:query BEGIN IMMEDIATE
+prisma:query UPDATE `main`.`Transaction` SET `paymentStatus` = ?, `paidAt` = ?, `updatedAt` = ? WHERE (`main`.`Transaction`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `userId` AS `userId`, `type` AS `type`, `coinAmount` AS `coinAmount`, `priceAmount` AS `priceAmount`, `paymentMethod` AS `paymentMethod`, `paymentStatus` AS `paymentStatus`, `paymentRef` AS `paymentRef`, `qrisUrl` AS `qrisUrl`, `expiredAt` AS `expiredAt`, `paidAt` AS `paidAt`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query UPDATE `main`.`User` SET `coins` = (`main`.`User`.`coins` + ?), `updatedAt` = ? WHERE (`main`.`User`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `email` AS `email`, `name` AS `name`, `password` AS `password`, `phone` AS `phone`, `coins` AS `coins`, `createdAt` AS `createdAt`, `updatedAt` AS `updatedAt`
+prisma:query COMMIT
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE (`main`.`User`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ POST /api/payment/status 200 in 18ms (compile: 2ms, render: 16ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 1799µs, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 11ms (compile: 3ms, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 11ms (compile: 2ms, render: 9ms)
+ GET / 200 in 34ms (compile: 2ms, render: 32ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 11ms (compile: 2ms, render: 9ms)
+ GET /api/coins/purchase 200 in 6ms (compile: 1607µs, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 10ms (compile: 3ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 13ms (compile: 3ms, render: 10ms)
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET / 200 in 29ms (compile: 1934µs, render: 27ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1713µs, render: 5ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 3ms, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 11ms (compile: 1630µs, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 8ms (compile: 2ms, render: 6ms)
+✓ Compiled in 174ms
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 1850µs, render: 7ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1345µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 11ms (compile: 1778µs, render: 9ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 65ms (compile: 47ms, render: 18ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 6ms (compile: 1397µs, render: 5ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1058µs, render: 6ms)
+ GET / 200 in 177ms (compile: 53ms, render: 124ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 8ms (compile: 2ms, render: 6ms)
+ GET /api/coins/purchase 200 in 5ms (compile: 3ms, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 1546µs, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 55ms (compile: 43ms, render: 12ms)
+ GET / 200 in 39ms (compile: 3ms, render: 36ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 11ms (compile: 2ms, render: 9ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1385µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 11ms (compile: 4ms, render: 7ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 9ms (compile: 1522µs, render: 7ms)
+ GET / 200 in 33ms (compile: 2ms, render: 31ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 8ms (compile: 1731µs, render: 6ms)
+ GET /api/coins/purchase 200 in 8ms (compile: 4ms, render: 4ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 18ms (compile: 3ms, render: 15ms)
+ GET /api/websites/generate 200 in 18ms (compile: 7ms, render: 11ms)
+ GET / 200 in 30ms (compile: 1942µs, render: 28ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 9ms (compile: 1592µs, render: 8ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1229µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 7ms (compile: 1387µs, render: 6ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 8ms (compile: 1458µs, render: 6ms)
+ GET / 200 in 30ms (compile: 1705µs, render: 29ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 7ms (compile: 1892µs, render: 6ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1125µs, render: 2ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 9ms (compile: 1450µs, render: 8ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 7ms (compile: 1146µs, render: 6ms)
+ GET / 200 in 27ms (compile: 6ms, render: 21ms)
+prisma:query SELECT 1
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+ GET /api/user 200 in 8ms (compile: 1766µs, render: 6ms)
+ GET /api/coins/purchase 200 in 4ms (compile: 1294µs, render: 3ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Transaction`.`id`, `main`.`Transaction`.`userId`, `main`.`Transaction`.`type`, `main`.`Transaction`.`coinAmount`, `main`.`Transaction`.`priceAmount`, `main`.`Transaction`.`paymentMethod`, `main`.`Transaction`.`paymentStatus`, `main`.`Transaction`.`paymentRef`, `main`.`Transaction`.`qrisUrl`, `main`.`Transaction`.`expiredAt`, `main`.`Transaction`.`paidAt`, `main`.`Transaction`.`createdAt`, `main`.`Transaction`.`updatedAt` FROM `main`.`Transaction` WHERE `main`.`Transaction`.`userId` = ? ORDER BY `main`.`Transaction`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/transactions 200 in 14ms (compile: 1592µs, render: 12ms)
+prisma:query SELECT `main`.`User`.`id`, `main`.`User`.`email`, `main`.`User`.`name`, `main`.`User`.`password`, `main`.`User`.`phone`, `main`.`User`.`coins`, `main`.`User`.`createdAt`, `main`.`User`.`updatedAt` FROM `main`.`User` WHERE `main`.`User`.`id` = ? LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Website`.`id`, `main`.`Website`.`userId`, `main`.`Website`.`title`, `main`.`Website`.`description`, `main`.`Website`.`prompt`, `main`.`Website`.`status`, `main`.`Website`.`coinCost`, `main`.`Website`.`htmlContent`, `main`.`Website`.`cssContent`, `main`.`Website`.`jsContent`, `main`.`Website`.`previewUrl`, `main`.`Website`.`createdAt`, `main`.`Website`.`updatedAt` FROM `main`.`Website` WHERE `main`.`Website`.`userId` = ? ORDER BY `main`.`Website`.`createdAt` DESC LIMIT ? OFFSET ?
+ GET /api/websites/generate 200 in 12ms (compile: 3ms, render: 10ms)
+ GET / 200 in 86ms (compile: 52ms, render: 34ms)
+ GET / 200 in 12ms (compile: 1645µs, render: 11ms)
+ GET / 200 in 14ms (compile: 1911µs, render: 12ms)
+ GET / 200 in 17ms (compile: 2ms, render: 15ms)
+ GET / 200 in 20ms (compile: 2ms, render: 18ms)
+ GET / 200 in 16ms (compile: 2ms, render: 14ms)
+ GET / 200 in 24ms (compile: 4ms, render: 20ms)
+ GET / 200 in 19ms (compile: 2ms, render: 17ms)
+ GET / 200 in 13ms (compile: 2ms, render: 11ms)
+ GET / 200 in 14ms (compile: 2ms, render: 12ms)
+ GET / 200 in 17ms (compile: 1650µs, render: 15ms)
+ GET / 200 in 13ms (compile: 2ms, render: 11ms)
+ GET / 200 in 13ms (compile: 1938µs, render: 11ms)
+ GET / 200 in 15ms (compile: 1601µs, render: 13ms)
+ GET / 200 in 16ms (compile: 1477µs, render: 15ms)
+ GET / 200 in 16ms (compile: 2ms, render: 14ms)
+ GET / 200 in 19ms (compile: 2ms, render: 17ms)
+ GET / 200 in 12ms (compile: 1637µs, render: 10ms)
+ GET / 200 in 11ms (compile: 1600µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1597µs, render: 13ms)
+ GET / 200 in 17ms (compile: 2ms, render: 15ms)
+ GET / 200 in 18ms (compile: 2ms, render: 16ms)
+ GET / 200 in 20ms (compile: 2ms, render: 18ms)
+ GET / 200 in 11ms (compile: 1495µs, render: 10ms)
+ GET / 200 in 12ms (compile: 1677µs, render: 10ms)
+ GET / 200 in 11ms (compile: 1465µs, render: 10ms)
+ GET / 200 in 14ms (compile: 1961µs, render: 12ms)
+ GET / 200 in 11ms (compile: 1471µs, render: 10ms)
+ GET / 200 in 19ms (compile: 1756µs, render: 17ms)
+ GET / 200 in 12ms (compile: 1708µs, render: 10ms)
+ GET / 200 in 12ms (compile: 1651µs, render: 10ms)
+ GET / 200 in 15ms (compile: 1703µs, render: 14ms)
+ GET / 200 in 11ms (compile: 1565µs, render: 9ms)
+ GET / 200 in 11ms (compile: 1682µs, render: 9ms)
+✓ Compiled in 192ms
+error: script "dev" was terminated by signal SIGTERM (Polite quit request)
+[?25h
