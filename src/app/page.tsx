@@ -2,13 +2,13 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-// Static coin packages
+// Static coin packages (1 koin = Rp 500)
 const COIN_PACKAGES = [
-  { coins: 5, price: 10000 },
-  { coins: 10, price: 20000 },
-  { coins: 25, price: 50000 },
-  { coins: 50, price: 100000 },
-  { coins: 100, price: 200000 },
+  { coins: 5, price: 2500 },
+  { coins: 10, price: 5000 },
+  { coins: 25, price: 12500 },
+  { coins: 50, price: 25000 },
+  { coins: 100, price: 50000 },
 ];
 
 // WhatsApp number for ordering
@@ -34,8 +34,8 @@ const SYSTEM_PROMPT = `Buat website HTML lengkap dalam 1 file dengan:
 - Warna menyesuaikan tema konten
 - Glassmorphism dan modern design`;
 
-// Job timeout in milliseconds (25 minutes)
-const JOB_TIMEOUT = 25 * 60 * 1000;
+// Job timeout in milliseconds (5 minutes)
+const JOB_TIMEOUT = 5 * 60 * 1000;
 
 // Polling interval (10 seconds)
 const POLL_INTERVAL = 10000;
@@ -92,8 +92,17 @@ export default function Home() {
   // Check job status from server
   const checkJobStatus = useCallback(async (jobId: string) => {
     try {
-      const response = await fetch(`/api/jobs/${jobId}`);
-      const data = await response.json();
+      const response = await fetch(`/api/jobs/${jobId}`, { cache: 'no-store' });
+      
+      // Get text first, then parse JSON
+      const text = await response.text();
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.log(`Job ${jobId} - Invalid JSON response, skipping...`);
+        return false;
+      }
       
       if (data.status === 'completed' && data.htmlContent) {
         // Update job with completed status
@@ -137,7 +146,6 @@ export default function Home() {
           localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
           return updated;
         });
-        showNotification(`❌ Gagal: ${data.error || 'Unknown error'}`, 'error');
         return true;
       } else if (data.status === 'not_found') {
         // Job not found on server - might be expired or not started
@@ -164,13 +172,12 @@ export default function Home() {
         setProcessingJobs(prev => {
           const updated = prev.map(j => 
             j.id === job.id 
-              ? { ...j, status: 'failed' as const, error: 'Timeout (25 menit)' }
+              ? { ...j, status: 'failed' as const, error: 'Timeout (5 menit)' }
               : j
           );
           localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
           return updated;
         });
-        showNotification(`❌ Website "${job.title}" melebihi batas waktu (25 menit)`, 'error');
       } else {
         // Check server status
         await checkJobStatus(job.id);
@@ -192,11 +199,26 @@ export default function Home() {
       if (savedTx) setTransactions(JSON.parse(savedTx));
       
       // Load jobs - DO NOT mark as failed on load!
+      // Only mark as failed if over 3 minutes timeout
       const savedJobs = localStorage.getItem('webgenz_processing_jobs');
       if (savedJobs) {
         const jobs: ProcessingJob[] = JSON.parse(savedJobs);
-        // Just load them as-is, polling will handle status updates
-        setProcessingJobs(jobs);
+        const now = Date.now();
+        
+        // Check each job for timeout
+        const validJobs = jobs.map(job => {
+          if (job.status === 'processing') {
+            const elapsed = now - job.startTime;
+            if (elapsed > JOB_TIMEOUT) {
+              // Only mark as failed if over 3 minutes
+              return { ...job, status: 'failed' as const, error: 'Timeout (5 menit)' };
+            }
+          }
+          return job;
+        });
+        
+        setProcessingJobs(validJobs);
+        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(validJobs));
       }
     } catch (e) {
       console.log('No saved data');
@@ -362,7 +384,7 @@ export default function Home() {
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
   };
 
-  // Generate website with background processing
+  // Generate website - SYNCHRONOUS (waits for result)
   const handleGenerate = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -380,22 +402,19 @@ export default function Home() {
     // Close modal immediately
     setGenerateOpen(false);
     
-    // Show processing notification
-    showNotification(`⏳ Membuat website "${websiteTitle}"... (5-20 menit)`, 'info');
+    // Store title before clearing
+    const title = websiteTitle;
     
     // Create job with startTime
     const jobId = `job_${Date.now()}`;
     const now = Date.now();
     const newJob: ProcessingJob = {
       id: jobId,
-      title: websiteTitle,
+      title: title,
       status: 'processing',
       createdAt: now,
       startTime: now
     };
-    
-    // Store title before clearing
-    const title = websiteTitle;
     
     // Add to processing jobs
     const updatedJobs = [newJob, ...processingJobs];
@@ -423,53 +442,81 @@ export default function Home() {
     }, ...transactions]);
     
     // Combine prompt
-    const finalPrompt = `Judul Website: ${title}\n\n${SYSTEM_PROMPT}`;
+    const finalPrompt = `Judul Website: ${title}\n\nBuat website profesional dengan tema: ${title}`;
 
     // Clear form
     setWebsiteTitle('');
 
-    // Send to server (async, don't wait)
-    fetch('/api/websites/generate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        prompt: finalPrompt, 
-        jobId,
-        title,
-        userId: user.id
-      })
-    }).then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        console.log('Job started:', jobId);
-      } else {
-        console.error('Failed to start job:', data.error);
-        // Mark as failed only if server explicitly failed to start
-        setProcessingJobs(prev => {
-          const updated = prev.map(j => 
-            j.id === jobId 
-              ? { ...j, status: 'failed' as const, error: data.error || 'Failed to start' }
-              : j
-          );
-          localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
-          return updated;
-        });
-        showNotification(`❌ Gagal memulai: ${data.error}`, 'error');
+    try {
+      console.log('[Client] Sending request to server...');
+      
+      const response = await fetch('/api/websites/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          prompt: finalPrompt, 
+          jobId,
+          title,
+          userId: user.id
+        })
+      });
+      
+      // Get text first, then parse JSON
+      const text = await response.text();
+      console.log('[Client] Raw response:', text.substring(0, 200));
+      
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch (parseError) {
+        console.error('[Client] JSON parse error. Response was:', text.substring(0, 500));
+        // Don't show error, let polling handle it
+        return;
       }
-    }).catch(error => {
-      console.error('Fetch error:', error);
-      // Mark as failed only on network error
-      setProcessingJobs(prev => {
-        const updated = prev.map(j => 
+      
+      console.log('[Client] Server response:', { success: data.success, hasHtml: !!data.htmlContent, error: data.error });
+      
+      if (data.success && data.htmlContent) {
+        // SUCCESS - Update job with completed status
+        const completedJobs = updatedJobs.map(j => 
           j.id === jobId 
-            ? { ...j, status: 'failed' as const, error: 'Network error' }
+            ? { ...j, status: 'completed' as const, htmlContent: data.htmlContent }
             : j
         );
-        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(updated));
-        return updated;
-      });
-      showNotification('❌ Gagal menghubungi server', 'error');
-    });
+        setProcessingJobs(completedJobs);
+        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(completedJobs));
+        
+        // Add to websites list
+        const newWebsite = {
+          id: jobId,
+          title: title,
+          status: 'COMPLETED',
+          createdAt: new Date(now).toISOString(),
+          htmlContent: data.htmlContent
+        };
+        const finalWebsites = [newWebsite, ...websites];
+        setWebsites(finalWebsites);
+        localStorage.setItem('webgenz_websites', JSON.stringify(finalWebsites));
+        
+        showNotification(`✅ Website "${title}" berhasil dibuat! (${Math.round(data.duration/1000)}s)`, 'success');
+        console.log('[Client] Website saved successfully');
+        
+      } else {
+        // FAILED - Server returned error
+        console.error('[Client] Server error:', data.error);
+        const failedJobs = updatedJobs.map(j => 
+          j.id === jobId 
+            ? { ...j, status: 'failed' as const, error: data.error || 'Unknown error' }
+            : j
+        );
+        setProcessingJobs(failedJobs);
+        localStorage.setItem('webgenz_processing_jobs', JSON.stringify(failedJobs));
+      }
+      
+    } catch (error: any) {
+      console.error('[Client] Network error:', error);
+      // Don't show error notification, let polling handle it
+    }
   };
 
   const handleDownload = (site: typeof websites[0]) => {
@@ -564,7 +611,7 @@ export default function Home() {
           </h1>
           <p style={{ fontSize: '20px', opacity: 0.9, marginBottom: '32px' }}>
             Tulis judul, AI buatkan website.<br />
-            <strong>1 koin = Rp 2.000</strong>
+            <strong>1 koin = Rp 500</strong>
           </p>
           <button
             onClick={() => setAuthOpen(true)}
@@ -940,7 +987,7 @@ export default function Home() {
             <div style={{ fontSize: '24px' }}>⏳</div>
             <div style={{ flex: 1 }}>
               <div style={{ fontWeight: '600' }}>Sedang Memproses Website</div>
-              <div style={{ fontSize: '14px', color: '#666' }}>Estimasi 5-20 menit. Kamu bisa refresh halaman, proses akan lanjut.</div>
+              <div style={{ fontSize: '14px', color: '#666' }}>Estimasi sekitar 1-5 menit.</div>
             </div>
           </div>
         )}
@@ -1220,7 +1267,7 @@ export default function Home() {
               )}
               
               <p style={{ color: '#888', fontSize: '12px', textAlign: 'center', marginTop: '12px' }}>
-                Proses membutuhkan waktu 5-20 menit
+                Proses membutuhkan waktu sekitar 1-5 menit
               </p>
             </form>
           </div>

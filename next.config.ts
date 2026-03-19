@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   reactStrictMode: false,
+  // Disable dev indicators (the black N logo)
+  devIndicators: false,
 };
 
 export default nextConfig;

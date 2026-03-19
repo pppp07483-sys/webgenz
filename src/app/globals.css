@@ -120,3 +120,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Hide Next.js dev indicator (black N logo) */
+#__next-build-watcher,
+[data-next-badge],
+.__next-build-indicator,
+.__next-badge,
+.nextjs-portal {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
